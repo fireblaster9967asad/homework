@@ -6,33 +6,70 @@
     <title>Document</title>
 </head>
 <body>
-    
-</body>
-</html>
-<style>
-body{
-}
-.text1{
-color:red;
-text-decoration: overline;
-}
-.text2{
-color: #722d2d;
-text-decoration: line-through;
-}
-.text3{
-color: rgb(70,98,120);
-text-decoration: underline;
-}
-.text4{
-color: rgba(0,0,0.4);
-text-decoration: overline underline;
-}
-.p1{
-font-family: 'Times New Roman', Times, serif;
-}
-.p2{
-font-family: Arial, Helvetica, sans-serif;
+    <style>
+div.relative{
+
+ position:relative;
+ left: 30px;
+ border: 3px solid #73AD21;
 }
 
-</style>
+div.fixed{
+
+ position:fixed;
+ left: 30px;
+ border: 3px solid #73AD21;
+}
+
+ div.absolute{
+
+ position:absolute;
+ left: 30px;
+ border: 3px solid #73AD21;
+}
+
+div.static{
+
+ position:static;
+ left: 30px;
+ border: 3px solid #73AD21;
+}
+
+<h2>positions</h2>
+<p>an element with position: relative;its position relative to normal position:</p>
+<div class="relative">
+this div element has position:relative
+</div><br><br>
+<div class="fixed">
+this div element has position:fixed
+</div><br><br>
+<div class="absolute">
+this div element has position:absolute
+</div><br><br>
+<div class="static">
+this div element has position:static
+</div><br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</body>
+</html>
