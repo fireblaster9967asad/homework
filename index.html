@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-
 <body>
-    <button onclick="multiply(4)">Click Me!</button>
-    <p id="result"></p>
+<h2>JavaScript String Methods and Loops</h2>
+<p>Numbers from 1 to 10</p>
+<p id="result"></p>
 
-    <script>
-        function multiply(a, b) {
-            if (b == undefined) {
-                alert("The value of b is undefined");
-                b = 5;
-            }
-            var result = a * b;
-            document.getElementById("result").innerHTML = result;
-        }
-    </script>
+<script>
+// Display numbers 1 to 10
+var number = "";
+for (var i = 1; i <= 10; i++) {
+    number += i + "<br>";
+}
+document.getElementById("result").innerHTML = number;
+
+// Display random value
+document.write("The random value is " + Math.floor(Math.random() * 100) + "<br>");
+
+// Display today's date
+var date = new Date();
+document.write("Today's Date is " + date.getDate());
+</script>
 
 </body>
 </html>
