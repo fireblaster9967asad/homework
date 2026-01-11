@@ -1,31 +1,21 @@
-
 <!DOCTYPE html>
 <html>
+<head>
+
 <body>
+    <button onclick="multiply(4)">Click Me!</button>
+    <p id="result"></p>
 
-<p>Sum of arguments and Math objects</p>
-<p id="demo"></p>
-
-<script>
-function sumAll() {
-    var sum = 0;
-    for (var i = 0; i < arguments.length; i++) {
-        sum += arguments[i];
-    }
-    return sum;
-}
-
-document.getElementById("demo").innerHTML = "Sum: " + sumAll(1, 123, 500, 115, 44, 88);
-
-var value = Math.sin(45 * Math.PI / 180); // Convert degrees to radians
-document.write("Sin 45 is : " + value + "<br>");
-
-var value1 = Math.cos(45 * Math.PI / 180);
-document.write("Cos 45 is : " + value1 + "<br>");
-
-var value2 = Math.tan(45 * Math.PI / 180);
-document.write("Tan 45 is : " + value2 + "<br>");
-</script>
+    <script>
+        function multiply(a, b) {
+            if (b == undefined) {
+                alert("The value of b is undefined");
+                b = 5;
+            }
+            var result = a * b;
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
 
 </body>
 </html>
