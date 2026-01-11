@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Objects Data Structure and Arrays</h2>
+
+<script>
+// Object
+var student = { 
+    name: 'Riya', 
+    age: '12', 
+    Grade: '7', 
+    hobbies: 'Drawing', 
+    fav_sport: 'Cricket' 
+};
+
+// Array
+var color = ["white", "black", "red", "green", "blue"];
+
+// Output student information
+document.write("Student name is: " + student.name + "<br>Student favorite sport is: " + student.fav_sport);
+
+// Output array information
+document.write("<br><br>My favorite color is: " + color[3]);
+
+document.write("<br><br>Before Popping the colors are: " + color.join("*"));
+
+// Remove last element
+color.pop();
+document.write("<br>After Popping the colors are: " + color.join("*"));
+</script>
+
+</body>
+</html>
