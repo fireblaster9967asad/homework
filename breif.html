@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Datatypes, Let keyword and Loops</title>
+</head>
+<body>
+
+<h2>JavaScript Datatypes, Let keyword and Loops</h2>
+
+<p id="result"></p>
+
+<script>
+    // Global variable declared with var
+    var i; // i is undefined in global scope
+    var text = " "; // Initialize text variable
+    
+    // Block scope using {}
+    {
+        // Variable declared with let - only exists within this block
+        let i = 0; // assigning a value for i only within the block
+        
+        // While loop using the block-scoped i
+        while (i < 10) {
+            text += "The values inside the block: " + i + "</br>";
+            i++;
+        }
+    }
+    
+    // Display the accumulated text in the paragraph element
+    document.getElementById("result").innerHTML = text;
+    
+    // Display the value of the global i variable
+    document.write("The value of i outside the block is: " + i);
+</script>
+
+</body>
+</html>
