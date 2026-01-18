@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Class Inheritance Example</title>
+</head>
+<body>
+    <h2>JavaScript Class Inheritance</h2>
+    
+    <p id="details"></p>
+    <p id="greetings"></p>
+    
+    <script>
+        // Parent class
+        class Student {
+            constructor(name) {
+                this.studentName = name;
+            }
+
+            static hello() {
+                return "Hello";
+            }
+
+            present() {
+                return 'My name is ' + this.studentName;
+            }
+        }
+
+        // Child class inheriting from Student
+        class Grade extends Student {
+            constructor(name, grade) {
+                super(name);
+                this.studentGrade = grade;
+            }
+
+            show() {
+                // Fixed: 'from' was undefined, changed to a string literal
+                return this.present() + ', I am in ' + this.studentGrade;
+            }
+        }
+
+        // Create an instance of Grade
+        let myStudent = new Grade("Tina", "grade 6");
+        document.getElementById("details").innerHTML = myStudent.show();
+        
+        // hello() is a static method and cannot be accessed by object myStudent
+        // It must be accessed through the class itself
+        document.getElementById("greetings").innerHTML = Student.hello();
+    </script>
+</body>
+</html>
