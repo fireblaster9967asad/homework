@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head><title>Shape Calculator</title><style>
+body{font-family:Arial;background:#f0f0f0;padding:20px}
+.container{max-width:400px;margin:auto}
+.shape-btns{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:15px 0}
+.shape-btn{padding:10px;border:none;background:#4a6fa5;color:white;border-radius:5px}
+.inputs{margin:15px 0}
+input{width:100%;padding:8px;margin:5px 0;box-sizing:border-box}
+.calc-btn{width:100%;padding:12px;background:#ff9800;color:white;border:none;font-weight:bold}
+.results{background:white;padding:15px;margin-top:15px;border-radius:5px}
+.result-item{margin:8px 0}
+</style></head>
+<body>
+<div class="container">
+<h2>Shape Calculator</h2>
+<div class="shape-btns">
+<button class="shape-btn" data-shape="square">Square</button>
+<button class="shape-btn" data-shape="rectangle">Rectangle</button>
+<button class="shape-btn" data-shape="circle">Circle</button>
+</div>
+<div class="inputs">
+<input id="dim1" placeholder="Enter dimension 1">
+<input id="dim2" placeholder="Enter dimension 2">
+</div>
+<button class="calc-btn" onclick="calculate()">Calculate</button>
+<div class="results">
+<div class="result-item">Area: <span id="area">-</span></div>
+<div class="result-item">Perimeter: <span id="perimeter">-</span></div>
+</div>
+</div>
+<script>
+let shape="square";
+document.querySelectorAll('.shape-btn').forEach(btn=>{
+btn.addEventListener('click',()=>{
+shape=btn.dataset.shape;
+document.querySelectorAll('.shape-btn').forEach(b=>b.style.background='#4a6fa5');
+btn.style.background='#ff9800';
+})});
+function calculate(){
+let d1=parseFloat(document.getElementById('dim1').value)||0;
+let d2=parseFloat(document.getElementById('dim2').value)||0;
+let area=0,perimeter=0;
+if(shape==='square'){area=d1*d1;perimeter=4*d1;}
+else if(shape==='rectangle'){area=d1*d2;perimeter=2*(d1+d2);}
+else if(shape==='circle'){area=Math.PI*d1*d1;perimeter=2*Math.PI*d1;}
+document.getElementById('area').textContent=area.toFixed(2);
+document.getElementById('perimeter').textContent=perimeter.toFixed(2);
+}
+</script>
+</body>
+</html>
