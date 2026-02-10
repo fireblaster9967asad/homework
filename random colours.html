@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html><head><style>body{margin:0;height:100vh;cursor:pointer}#info{position:fixed;top:10px;left:10px;background:rgba(0,0,0,0.7);color:white;padding:10px}</style></head>
+<body><div id="info">Click!</div>
+<script>
+let c=0;
+document.body.onclick=e=>{
+c++;
+let r=Math.floor(Math.random()*256);
+let g=Math.floor(Math.random()*256);
+let b=Math.floor(Math.random()*256);
+let col="rgb("+r+", "+g+", "+b+")";
+document.body.style.background=col;
+document.getElementById("info").innerHTML=`Clicks: ${c}<br>RGB: ${r},${g},${b}`;
+let dot=document.createElement("div");
+dot.style.position="absolute";
+dot.style.left=(e.clientX-10)+"px";
+dot.style.top=(e.clientY-10)+"px";
+dot.style.width="20px";
+dot.style.height="20px";
+dot.style.background=col;
+dot.style.borderRadius="50%";
+document.body.appendChild(dot);
+setTimeout(()=>dot.remove(),500);
+};
+</script></body></html>
