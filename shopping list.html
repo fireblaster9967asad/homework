@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head><style>body{font-family:Arial;max-width:400px;margin:20px auto;padding:0 20px}.item{display:flex;justify-content:space-between;align-items:center;padding:8px;margin:5px 0;background:#f0f0f0;border-radius:4px}button{margin-left:5px;padding:5px 10px}</style></head>
+<body>
+<h2>Shopping List</h2>
+<form id="myForm"><input id="myInput" type="text" placeholder="Add item..." required><button type="submit">Add</button></form>
+<ul id="shoppingList"></ul>
+<script>
+const myForm = document.getElementById('myForm')
+const myInput = document.getElementById('myInput')
+const shoppingList = document.getElementById('shoppingList')
+
+function createItem(itemText) {
+    const li = document.createElement('li')
+    li.className = 'item'
+    li.innerHTML = `<span>${itemText}</span><button onclick="this.parentElement.remove()">Delete</button>`
+    shoppingList.appendChild(li)
+    myInput.value = ''
+}
+
+myForm.addEventListener('submit', function(event) {
+    event.preventDefault()
+    if (myInput.value.trim()) createItem(myInput.value.trim())
+})
+</script>
+</body>
+</html>
