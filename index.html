@@ -5,30 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 </head>
 
 <body>
+    <!--Navigation bar start-->
 
-    <p>Sum of arguments and Math objects </p>
-    <p id="demo"></p>
-    <script>
 
-        function sumAll() {
-            var sum = 0;
-        }
-        for (i = 0; i < arguments.length; i++)
 
-            sum += arguments[i];
-        return sum;
+    <div class="topnav">
 
-        document.getElementById("demo").innerHTML = sumAll(1, 123, 500, 115, 44, 88);
+        <a href="#">Home</a>
+        <a href="#">About_us</a>
+        <a href="#">Gallery</a>
+        <a class="active" href="#">Contact_Us</a>
 
-        var value = Math.sin(45);
-        document.write("Sin 45 is : " + value + "<br>");
-        var value1 = Math.cos(45);
-        document.write("Cos 45 is : " + value1 + "<br>");
-        var value2 = Math.tan(45);
-        document.write("Tan 45 is : " + value2 + "<br>");
+    </div>
+    <!--Navigation bar end-->
 
-</body >
-</html >
+    <script src="script.js"></script>
+
+    <section>
+
+        <img class="myslides" src="night.jpg" style="height:500px">
+        <img class="myslides" src="nature2.jpg" style="height:500px">
+        <img class="myslides" src="nature3.jpg" style="height:500px">
+
+    </section>
+</body>
+
+</html>
