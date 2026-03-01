@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>odd/even click</title></head>
+<body style="background:#1e1e2f; display:grid; place-items:center; min-height:100vh">
+<div style="background:#2a2a3b; padding:2rem; border-radius:2rem; text-align:center">
+<h2 style="color:#c0d0f0">🎲 click · stop · go</h2>
+<p id="clicks" style="font-size:3rem; color:#ffd966; margin:0">0</p>
+<button id="btn" style="font-size:1.8rem; padding:0.5rem 2rem; border-radius:3rem">click me</button>
+</div>
+<script>
+let c=0, t
+const b=document.body, d=document.getElementById('clicks')
+const r=()=>'#'+(Math.random()*0xffffff|0).toString(16).padStart(6,'0')
+const u=()=>b.style.backgroundColor=r()
+t=setInterval(u,400)
+document.getElementById('btn').onclick=()=>{
+c++
+d.innerText=c
+if(c%2===0){if(!t)t=setInterval(u,400)}
+else{if(t){clearInterval(t);t=null}}
+}
+</script>
+</body>
+</html>
